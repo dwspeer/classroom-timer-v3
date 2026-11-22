@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Classroom Timer & Playtime Loss Tracker — 3.7</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<main id="app">
+  <div id="scene" aria-label="Cartoon classroom">
+    <img class="scene-bg" src="assets/classroom.jpg" alt="Illustrated elementary classroom with Newline monitor">
+    <img id="teacher" class="teacher" src="assets/teacher-dave.png" alt="Selected teacher">
+    <div class="screen" id="screen">
+      <div class="screen-title" id="boardTitle">CLASSROOM TIMER</div>
+      <div class="screen-subtitle" id="boardSubtitle">General classroom timer</div>
+      <div id="boardRows" class="board-rows"></div>
+      <div class="screen-footer"><span id="timerLabel">CLASS TIMER</span><strong id="timerDisplay">20:00</strong><span id="boardStatus">Ready to begin</span></div>
+    </div>
+    <svg class="clock" viewBox="0 0 120 120" aria-label="Working wall clock"><circle cx="60" cy="60" r="58" fill="#172b3b"/><circle cx="60" cy="60" r="51" fill="#fffdf0" stroke="#273342" stroke-width="2"/><g id="clockTicks"></g><g id="clockNumbers"></g><line id="hourHand" x1="60" y1="60" x2="60" y2="34" stroke="#14191f" stroke-width="5" stroke-linecap="round"/><line id="minuteHand" x1="60" y1="60" x2="60" y2="19" stroke="#14191f" stroke-width="3.5" stroke-linecap="round"/><line id="secondHand" x1="60" y1="66" x2="60" y2="14" stroke="#c83030" stroke-width="1.6"/><circle cx="60" cy="60" r="4" fill="#15191f"/></svg>
+    <span id="ready" class="ready">STARTING…</span>
+  </div>
+  <section class="toolbar" aria-label="Timer controls">
+    <form id="quickForm" class="tool-group"><input id="quickName" maxlength="30" placeholder="Student name" aria-label="Student name"><button type="submit" class="green">ADD</button></form>
+    <button id="settingsBtn">NAMES / VOICE / TEACHER</button>
+    <label class="minutes-control">MIN <input id="minuteInput" type="number" min="1" max="60" value="20"></label>
+    <button id="startBtn" class="green">START</button><button id="resetBtn" class="red">RESET</button>
+    <button id="fullscreenBtn" class="blue">FULL SCREEN</button><button id="testBtn">TEST</button>
+  </section>
+</main>
+<dialog id="settingsDialog" aria-label="Settings panel"><div class="dialog-head" id="settingsHandle" title="Drag to move this panel"><h2>Names, voice & teacher</h2><button id="closeSettings" aria-label="Close">×</button></div>
+ <form id="nameForm" class="form-row"><input id="nameInput" maxlength="30" placeholder="Student first name"><button class="green">ADD STUDENT</button><button type="button" id="clearNames" class="red">CLEAR NAMES</button></form>
+ <div class="form-row"><label>Classroom activity <select id="activityChoice"><option value="Playtime">Playtime</option><option value="Free Choice">Free Choice</option><option value="custom">Custom…</option></select></label><label id="customTermWrap" hidden>Custom activity name <input id="activityTerm" maxlength="32" placeholder="e.g. Flex Time" value=""></label></div>
+ <div class="form-row"><label>Teacher <select id="teacherSelect"><option value="dave">Dave</option><option value="professor-gizmo">Professor Gizmo</option><option value="grizzle">Ms. Grizzle</option><option value="turbo-fox">Turbo Fox</option><option value="principal-rex">Principal Rex</option><option value="mr-blocks">Mr. Blocks</option><option value="none">No teacher</option></select></label><label>Teacher visibility <select id="teacherVisibility"><option value="loss">Playtime loss only</option><option value="always">Both timer modes</option><option value="never">Never</option></select></label></div>
+ <div class="form-row"><label>Announcement voice <select id="voiceSelect"><option value="">System default</option></select></label><button id="voiceTest" type="button">TEST VOICE</button></div>
+ <p class="hint">Drag the title bar to move this panel. Close with × or the settings button.</p><p class="hint">One mark = 2 minutes. Everyone starts together. Students with equal time are released together. Available voices depend on the browser and device.</p>
+ </dialog>
+<dialog id="testDialog"><div class="dialog-head"><h2>Test functions</h2><button id="closeTest">×</button></div><p>Use these without waiting for a full countdown.</p><div class="form-row"><button id="testCountdown" type="button">10-SECOND TEST</button><button id="testRelease" type="button">TEST RELEASE ANNOUNCEMENT</button><button id="testClock" type="button">CHECK CLOCK</button></div></dialog>
+<script src="app.js" defer></script></body></html>

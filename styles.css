@@ -1,0 +1,58 @@
+:root{font-family:Arial,Helvetica,sans-serif;color:#f7f8fc;background:#222c3c}*{box-sizing:border-box}body{margin:0}#app{min-height:100dvh;display:flex;flex-direction:column;justify-content:center;align-items:center}#scene{position:relative;width:min(100vw,calc((100dvh - 72px)*1.776));aspect-ratio:1671/941;overflow:hidden;background:#e4d6c6}.scene-bg{position:absolute;inset:0;width:100%;height:100%}.teacher{position:absolute;left:17.4%;bottom:6.5%;width:14%;height:78%;object-fit:contain;object-position:center bottom;filter:drop-shadow(2px 3px 2px #0005);transition:opacity .25s;pointer-events:none}.teacher.hide{opacity:0}.screen{position:absolute;left:31.7%;top:13.3%;width:33.7%;height:29.8%;background:#f8fcff;display:flex;flex-direction:column;padding:0.8% 1%;color:#162e51;overflow:hidden}.screen-title{text-align:center;font-size:clamp(9px,1.8vw,32px);font-weight:900;color:#163c9b;line-height:1.05}.screen-subtitle{text-align:center;font-size:clamp(5px,.72vw,12px);margin:.4% 0 .5%}.board-rows{flex:1;min-height:0;overflow:auto;display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:min-content;gap:1% 2%;align-content:start}.board-row{display:flex;align-items:center;gap:3px;border-bottom:1px solid #c2d9ed;min-width:0;font-size:clamp(8px,1.08vw,19px);padding:2px 0}.student-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:46%;font-weight:700}.tallies{display:flex;flex:1;gap:1px;overflow:hidden}.tallies svg{height:clamp(8px,1.1vw,18px);width:5px;flex-shrink:0}.row-tools{display:flex;align-items:center;gap:2px}.row-tools button{padding:0 3px;font-size:clamp(8px,.75vw,14px);min-width:0;background:#e1ecfa;color:#173c73;border:1px solid #91afd2;border-radius:3px}.row-tools .mins{font-size:clamp(7px,.65vw,12px);white-space:nowrap}.board-row.finished{opacity:.4;text-decoration:line-through}.screen-footer{border-top:2px solid #b6cfe6;display:flex;align-items:center;justify-content:space-between;gap:1%;min-height:22%;font-size:clamp(5px,.75vw,12px)}.screen-footer strong{font-variant-numeric:tabular-nums;font-size:clamp(18px,3.2vw,55px);color:#143a80;line-height:1}.screen-footer span{flex:1}.screen-footer span:last-child{text-align:right}.clock{position:absolute;left:67.5%;top:12.2%;width:7.1%;height:auto;filter:drop-shadow(1px 2px 2px #0005)}.ready{position:absolute;bottom:1%;left:1%;font-size:clamp(8px,.75vw,14px);color:#fff;background:#143b5cdd;padding:3px 6px;border-radius:3px}.toolbar{width:100%;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:7px;padding:10px;background:#2a3548;min-height:64px}.tool-group,.form-row{display:flex;align-items:center;gap:7px;flex-wrap:wrap}.toolbar input{width:130px}.toolbar button,.toolbar input,.toolbar select,dialog button,dialog input,dialog select{font:inherit;font-size:14px;border-radius:5px;padding:9px;border:1px solid #8798ae}.toolbar button,dialog button{background:#45536a;color:#fff;cursor:pointer;font-weight:700}.toolbar .green,dialog .green{background:#07833a}.toolbar .red,dialog .red{background:#b72832}.toolbar .blue{background:#0863c2}.minutes-control{font-size:12px;white-space:nowrap}.minutes-control input{width:55px}button:disabled{opacity:.45;cursor:not-allowed}dialog{position:fixed;margin:0;right:12px;bottom:80px;left:auto;top:auto;width:min(92vw,540px);max-height:min(75dvh,650px);overflow:auto;max-width:min(95vw,680px);border:2px solid #60708c;border-radius:12px;padding:20px;background:#f7faff;color:#1a2d43;box-shadow:0 10px 40px #0009}dialog::backdrop{background:#0009}.dialog-head{display:flex;align-items:center;justify-content:space-between;gap:10px;cursor:move;touch-action:none;user-select:none;background:#e5edf8;margin:-20px -20px 14px;padding:9px 15px;border-radius:10px 10px 0 0}.dialog-head h2{font-size:20px}.dialog-head button{font-size:22px}.form-row{margin:12px 0}dialog label{display:flex;flex-direction:column;gap:4px;font-size:13px}dialog input,dialog select{background:white;color:#142b46;max-width:100%}.hint{font-size:12px;line-height:1.5;color:#4a5970}@media(max-width:600px){#app{justify-content:flex-start}.toolbar{gap:5px;padding:7px}.toolbar button,.toolbar input{font-size:12px;padding:8px}.toolbar input{width:112px}.screen-title{font-size:2.2vw}.screen-subtitle{font-size:.75vw}.screen-footer strong{font-size:3.5vw}.board-row{font-size:1vw}.row-tools button{padding:0 2px}}@media(max-height:550px) and (min-width:700px){#scene{width:min(100vw,calc((100dvh - 58px)*1.776))}.toolbar{min-height:50px;padding:5px}}
+
+#customTermWrap[hidden]{display:none}#settingsDialog:not([open]){display:none}.board-rows{scrollbar-width:thin}.board-row{gap:2px}.student-name{flex:0 1 44%;min-width:0}.tallies{min-width:0}.row-tools{flex-shrink:0}.screen{padding:.6% .75%}.screen-subtitle{margin:.1% 0}.screen-footer{min-height:23%}@media(max-width:600px){dialog{bottom:8px;right:4px;width:calc(100vw - 8px);max-height:72dvh}.board-row{font-size:1.1vw}.student-name{max-width:43%}}
+/* v3.2: fit the six student rows, enlarge teacher, align wall clock. */
+.teacher{left:10.8%;bottom:6.5%;width:21.5%;height:84%;}
+.clock{left:68.25%;top:12.65%;width:7.05%;}
+.screen{padding:.42% .75% .35%;}
+.screen-title{font-size:clamp(9px,1.33vw,24px);line-height:1.02;letter-spacing:.005em;flex-shrink:0;}
+.screen-subtitle{font-size:clamp(6px,.65vw,11px);margin:.12% 0 .25%;flex-shrink:0;}
+.board-rows{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:minmax(0,1fr);grid-template-rows:repeat(3,minmax(0,1fr));grid-auto-flow:row;gap:0 2%;overflow-y:auto;align-content:stretch;}
+.board-row{font-size:clamp(8px,.94vw,16px);padding:0;min-height:0;gap:2px;}
+.student-name{flex:0 1 43%;max-width:43%;}
+.row-tools button{font-size:clamp(8px,.7vw,12px);padding:0 2px;}
+.row-tools .mins{font-size:clamp(7px,.6vw,10px);}
+.tallies svg{height:clamp(8px,.9vw,15px);width:4px;}
+.screen-footer{min-height:22%;height:22%;font-size:clamp(6px,.65vw,11px);}
+.screen-footer strong{font-size:clamp(18px,2.7vw,47px);}
+@media(max-width:600px){.screen-title{font-size:1.6vw}.board-row{font-size:1.05vw}.screen-footer strong{font-size:3vw}}
+
+/* v3.3: clock-free background and 40% larger teacher artwork. */
+.teacher{left:6.6%;bottom:6.5%;width:30.2%;height:92%;}
+.clock{left:68.0%;top:12.0%;width:7.35%;}
+
+/* v3.4: move teacher slightly right, preserve scale and floor alignment. */
+.teacher{left:9.2%;}
+
+/* v3.5: Amy is shorter than Dave; both share the same floor anchor. */
+.teacher.teacher-amy{height:83%;width:27.2%;left:10.7%;bottom:6.5%;}
+
+/* v3.6: individual teacher calibration; feet share the same floor baseline. */
+.teacher{object-fit:contain;object-position:center bottom;}
+.teacher.teacher-dave{left:9.2%;bottom:6.5%;width:30.2%;height:92%;}
+.teacher.teacher-amy{left:10.7%;bottom:6.5%;width:27.2%;height:83%;}
+.teacher.teacher-grizzle{left:11.4%;bottom:6.5%;width:25%;height:82%;}
+.teacher.teacher-turbo-fox{left:10.5%;bottom:6.5%;width:25%;height:78%;}
+.teacher.teacher-principal-rex{left:10.4%;bottom:6.5%;width:27%;height:82%;}
+.teacher.teacher-mr-blocks{left:10.8%;bottom:6.5%;width:26%;height:79%;}
+
+/* v3.7: keep Dave and Amy fixed; shift other characters away from the left table.
+   The teacher is a foreground layer, including where it overlaps the Newline. */
+.teacher{z-index:5;}
+.screen{z-index:2;}
+.clock{z-index:3;}
+.ready{z-index:6;}
+.teacher.teacher-grizzle{left:15.4%;}
+.teacher.teacher-turbo-fox{left:15.5%;}
+.teacher.teacher-principal-rex{left:15.2%;}
+.teacher.teacher-mr-blocks{left:15.8%;}
+
+/* v3.8: Professor Gizmo replaces Amy; foreground layer, clear of left desks. */
+.teacher.teacher-professor-gizmo{left:15.5%;bottom:6.5%;width:26%;height:79%;z-index:5;}
+
+/* v3.9: move the three wide characters left and a little toward the viewer.
+   Preserve artwork dimensions; lower floor anchor for a foreground perspective.
+   Dave, Grizzle, and Turbo Fox retain their v3.8 positions. */
+.teacher.teacher-professor-gizmo{left:11.8%;bottom:4.7%;}
+.teacher.teacher-principal-rex{left:11.5%;bottom:4.7%;}
+.teacher.teacher-mr-blocks{left:12.0%;bottom:4.7%;}
